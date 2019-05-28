@@ -29,6 +29,12 @@ React Native library that implements PayPal [Checkout](https://developers.braint
       [[RNPaypal sharedInstance] configure];
     }
 
+    - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+    {
+      return [[RNPaypal sharedInstance] application:app openURL:url options:options];
+    }
+
+    // If you support iOS 8, use the following method.
     - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
       sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
     {
